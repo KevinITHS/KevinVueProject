@@ -16,7 +16,7 @@ import {
 
 const app = createApp(App);
 
-// Add the imported functions to the globalProperties
+// Adds the imported functions to the globalProperties
 app.config.globalProperties.$fetchGameDetails = fetchGameDetails;
 app.config.globalProperties.$fetchLatestNews = fetchLatestNews;
 app.config.globalProperties.$fetchGiveaways = fetchGiveaways;
@@ -35,7 +35,6 @@ const router = createRouter({
       path: "/",
       component: Home, // Use Home.vue as the component for the '/' route
     },
-    // Add more routes for other components/pages
   ],
 });
 

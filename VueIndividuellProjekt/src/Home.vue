@@ -11,16 +11,11 @@
 
 <script>
 export default {
-  name: "Home", // Specify the component name
+  name: "Home",
   setup() {
-    // Your setup logic if needed
-
-    // Return any properties, methods, etc. if needed
     return {};
   },
 };
 </script>
 
-<style scoped>
-/* Add styles for the home page here */
-</style>
+<style scoped></style>
