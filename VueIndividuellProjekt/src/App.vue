@@ -9,7 +9,8 @@
       <!-- Add more navigation links for other routes -->
     </nav>
     <main>
-      <router-view></router-view> <!-- Content of different routes will be displayed here -->
+      <router-view></router-view>
+      <!-- Content of different routes will be displayed here -->
     </main>
   </div>
 </template>

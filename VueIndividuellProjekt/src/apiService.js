@@ -1,12 +1,12 @@
-const apiKey = '56f3c03e51mshe077fecdd2252aep131963jsnee4540e7b907';
+const apiKey = "56f3c03e51mshe077fecdd2252aep131963jsnee4540e7b907";
 
 async function fetchData(url) {
   const options = {
-    method: 'GET',
+    method: "GET",
     headers: {
-      'X-RapidAPI-Key': apiKey,
-      'X-RapidAPI-Host': 'mmo-games.p.rapidapi.com'
-    }
+      "X-RapidAPI-Key": apiKey,
+      "X-RapidAPI-Host": "mmo-games.p.rapidapi.com",
+    },
   };
 
   try {
@@ -25,12 +25,12 @@ export async function fetchGameDetails(gameId) {
 }
 
 export async function fetchLatestNews() {
-  const url = 'https://mmo-games.p.rapidapi.com/latestnews';
+  const url = "https://mmo-games.p.rapidapi.com/latestnews";
   return await fetchData(url);
 }
 
 export async function fetchGiveaways() {
-  const url = 'https://mmo-games.p.rapidapi.com/giveaways';
+  const url = "https://mmo-games.p.rapidapi.com/giveaways";
   return await fetchData(url);
 }
 
@@ -60,6 +60,6 @@ export async function fetchGamesByCategory(category) {
 }
 
 export async function fetchGames() {
-  const url = 'https://mmo-games.p.rapidapi.com/games';
+  const url = "https://mmo-games.p.rapidapi.com/games";
   return await fetchData(url);
 }
