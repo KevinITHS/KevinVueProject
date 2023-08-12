@@ -3,7 +3,6 @@ import App from './App.vue';
 import { createRouter, createWebHistory } from 'vue-router'; 
 import Home from './Home.vue';
 import { 
-  fetchGameData,
   fetchGameDetails,
   fetchLatestNews,
   fetchGiveaways,
@@ -18,7 +17,6 @@ import {
 const app = createApp(App);
 
 // Add the imported functions to the globalProperties
-app.config.globalProperties.$fetchGameData = fetchGameData;
 app.config.globalProperties.$fetchGameDetails = fetchGameDetails;
 app.config.globalProperties.$fetchLatestNews = fetchLatestNews;
 app.config.globalProperties.$fetchGiveaways = fetchGiveaways;

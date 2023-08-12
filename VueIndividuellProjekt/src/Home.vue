@@ -11,16 +11,7 @@ export default {
   setup() {
     // Your setup logic if needed
 
-    // Example fetchData function (you can modify or remove this)
-    const fetchData = async () => {
-      const url = 'https://mmo-games.p.rapidapi.com/game?id=452';
-      const result = await $fetchGameData(url);
-      if (result) {
-        console.log(result);
-      }
-    };
-
-    fetchData(); // Call fetchData if needed
+ 
 
     // Return any properties, methods, etc. if needed
     return {};

@@ -2,11 +2,10 @@
   <div id="app">
     <header>
       <!-- Your header content -->
-      <h1>a</h1>
     </header>
     <nav>
       <!-- Your navigation links -->
-      <router-link to="/">Home</router-link>
+      <router-link to="/"></router-link>
       <!-- Add more navigation links for other routes -->
     </nav>
     <main>
