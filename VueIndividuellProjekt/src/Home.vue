@@ -53,54 +53,67 @@ export default defineComponent({
           image: 'src/pictures/games1.png',
           title: 'Games list',
           description: 'Live games list',
+          route: '/GamesList',
+      
         },
         {
           id: 2,
           image: 'src/pictures/games2.png',
           title: 'Latest MMO News',
           description: 'Latest MMO News powered by MMOBomb',
+          route: '/MMONews',
         },
         {
           id: 3,
           image: 'src/pictures/games3.png',
           title: 'Latest MMO Giveaways',
           description: 'Live Giveaways list',
+          route: '/Giveaways',
+
         },
         {
           id: 4,
           image: 'src/pictures/games4.png',
           title: 'Filter Games by multiple tags',
           description: 'Filter Games by multiple tags for personalized results. Insert tag, eg: mmorpg, shooter, pvp, mmofps and more at https://www.mmobomb.com/api . Optionally you can also use the "platform"...',
+          route: '/FilterMultiTags',
         },
         {
           id: 5,
           image: 'src/pictures/games5.png',
           title: 'Games by platform & category & sorted',
           description: 'Games by platform & category & sorted',
+          route: '/PlatCatSort',
         },
         {
           id: 6,
           image: 'src/pictures/games6.png',
           title: 'Sort Games',
           description: 'Sort games by release date, alphabetical, popularity or relevance',
+          route: '/SortGames',
         },
         {
           id: 7,
           image: 'src/pictures/games7.png',
           title: 'Games by category or tag',
           description: 'Insert game category or tag, eg: mmorpg, shooter, pvp, mmofps and more. Full tag list at https://www.mmobomb.com/api',
+          route: '/CategoryTag',
         },
         {
           id: 8,
           image: 'src/pictures/games8.png',
           title: 'Games by Platform',
           description: 'Insert platform, eg: pc, browser or all',
+          route: '/GamesByPlat',
+
         },
         {
           id: 9,
           image: 'src/pictures/games9.png',
           title: 'Return details from a specific game',
           description: 'Insert game id',
+          route: '/SpecificDetail',
+
         },
       
       ],
