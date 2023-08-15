@@ -11,13 +11,15 @@
     <div class="carousel-container">
       <Carousel :autoplay="4000" :wrap-around="true">
         <Slide v-for="slide in slides" :key="slide.id">
-          <div class="carousel-item">
-            <img :src="slide.image" :alt="slide.title" />
-            <div class="overlay">
-              <h2>{{ slide.title }}</h2>
-              <p>{{ slide.description }}</p>
+          <router-link :to="slide.route">
+            <div class="carousel-item">
+              <img :src="slide.image" :alt="slide.title" />
+              <div class="overlay">
+                <h2>{{ slide.title }}</h2>
+                <p>{{ slide.description }}</p>
+              </div>
             </div>
-          </div>
+          </router-link>
         </Slide>
 
         <template #addons>
@@ -127,6 +129,7 @@ export default defineComponent({
   text-align: center;
   margin: auto;
   max-width: 800px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .header h1 {
@@ -153,8 +156,13 @@ export default defineComponent({
 
 .carousel-item {
   position: relative;
+  cursor: pointer;
+  transition: transform 0.25s;
 }
 
+.carousel-item:hover {
+  transform: scale(1.1);
+}
 .overlay {
   position: absolute;
   bottom: 0;
