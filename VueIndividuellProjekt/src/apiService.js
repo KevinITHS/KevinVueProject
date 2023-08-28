@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 const apiKey = "56f3c03e51mshe077fecdd2252aep131963jsnee4540e7b907";
 
 async function fetchData(url) {
@@ -7,6 +8,15 @@ async function fetchData(url) {
       "X-RapidAPI-Key": apiKey,
       "X-RapidAPI-Host": "mmo-games.p.rapidapi.com",
     },
+=======
+export async function fetchGameData(url) {
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': '56f3c03e51mshe077fecdd2252aep131963jsnee4540e7b907',
+      'X-RapidAPI-Host': 'mmo-games.p.rapidapi.com'
+    }
+>>>>>>> Stashed changes
   };
 
   try {
@@ -17,6 +27,7 @@ async function fetchData(url) {
     console.error(error);
     return null;
   }
+<<<<<<< Updated upstream
 }
 
 export async function fetchGameDetails(gameId) {
@@ -63,3 +74,6 @@ export async function fetchGames() {
   const url = "https://mmo-games.p.rapidapi.com/games";
   return await fetchData(url);
 }
+=======
+}
+>>>>>>> Stashed changes

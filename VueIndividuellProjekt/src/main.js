@@ -37,6 +37,21 @@ const router = createRouter({
   ],
 });
 
+<<<<<<< Updated upstream
 app.use(router);
+=======
+async function fetchData() {
+  const apiUrls = [
+    'https://mmo-games.p.rapidapi.com/game?=1',
+    'https://mmo-games.p.rapidapi.com/latestnews',
+    'https://mmo-games.p.rapidapi.com/giveaways',
+    'https://mmo-games.p.rapidapi.com/filter?tag=3d.mmorpg.fantasy.pvp&platform=pc',
+    'https://mmo-games.p.rapidapi.com/games?platform=browser&category=mmorpg&sort-by=release-date',
+    'https://mmo-games.p.rapidapi.com/games?sort-by=alphabetical',
+    'https://mmo-games.p.rapidapi.com/games?category=shooter',
+    'https://mmo-games.p.rapidapi.com/games?platform=browser',
+    'https://mmo-games.p.rapidapi.com/games'
+  ];
+>>>>>>> Stashed changes
 
 app.mount("#app");
