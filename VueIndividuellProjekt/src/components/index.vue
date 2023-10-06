@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 export default {
   setup() {
     const fetchData = async () => {
@@ -12,4 +12,4 @@ export default {
     fetchData();
   }
 };
-</script>
+</script> -->

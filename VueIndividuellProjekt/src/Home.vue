@@ -4,12 +4,13 @@
       <h1>Welcome to MMO World!</h1>
       <h2>Latest news, giveaways, video games information and more!</h2>
       <p>
-        Explore the world of video games like never before with our diverse range of content.
+        Explore the world of video games like never before with our diverse
+        range of content.
       </p>
     </header>
 
     <div class="carousel-container">
-      <Carousel :autoplay="4000" :wrap-around="true">
+      <Carousel :autoplay="3000" :wrap-around="true">
         <Slide v-for="slide in slides" :key="slide.id">
           <router-link :to="slide.route">
             <div class="carousel-item">
@@ -33,13 +34,13 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue';
-import { Carousel, Pagination, Slide } from 'vue3-carousel';
+import { defineComponent } from "vue";
+import { Carousel, Pagination, Slide } from "vue3-carousel";
 
-import 'vue3-carousel/dist/carousel.css';
+import "vue3-carousel/dist/carousel.css";
 
 export default defineComponent({
-  name: 'Home',
+  name: "Home",
   components: {
     Carousel,
     Slide,
@@ -47,77 +48,73 @@ export default defineComponent({
   },
   data() {
     return {
-
-      // titles and descriptions from the endpoints at https://rapidapi.com/digiwalls/api/mmo-games
+      // !! "title" and "description" text is from the endpoints at https://rapidapi.com/digiwalls/api/mmo-games !!
       slides: [
         {
           id: 1,
-          image: 'src/pictures/games1.png',
-          title: 'Games list',
-          description: 'Live games list',
-          route: '/GamesList',
-      
+          image: "src/pictures/games1.png",
+          title: "Games list",
+          description:
+            "Looking for new games to play? Here is an entire list of games!",
+          route: "/GamesList",
         },
         {
           id: 2,
-          image: 'src/pictures/games2.png',
-          title: 'Latest MMO News',
-          description: 'Latest MMO News powered by MMOBomb',
-          route: '/MMONews',
+          image: "src/pictures/games2.png",
+          title: "Latest MMO News",
+          description: "Latest MMO News powered by MMOBomb",
+          route: "/MMONews",
         },
         {
           id: 3,
-          image: 'src/pictures/games3.png',
-          title: 'Latest MMO Giveaways',
-          description: 'Live Giveaways list',
-          route: '/Giveaways',
+          image: "src/pictures/games6.png",
+          title: "Latest MMO Giveaways",
+          description: "Live Giveaways list",
+          route: "/Giveaways",
+        },
+        // {
+        //   id: 4,
+        //   image: 'src/pictures/games4.png',
+        //   title: 'Filter Games by multiple tags',
+        //   description: 'Filter Games by multiple tags for personalized results. Insert tag, eg: mmorpg, shooter, pvp, mmofps and more at https://www.mmobomb.com/api . Optionally you can also use the "platform"...',
+        //   route: '/FilterMultiTags',
+        // },
+        // {
+        //   id: 5,
+        //   image: 'src/pictures/games5.png',
+        //   title: 'Games by platform & category & sorted',
+        //   description: 'Games by platform & category & sorted',
+        //   route: '/PlatCatSort',
+        // },
+        // {
+        //   id: 6,
+        //   image: 'src/pictures/games6.png',
+        //   title: 'Sort Games',
+        //   description: 'Sort games by release date, alphabetical, popularity or relevance',
+        //   route: '/SortGames',
+        // },
+        // {
+        //   id: 7,
+        //   image: 'src/pictures/games7.png',
+        //   title: 'Games by category or tag',
+        //   description: 'Insert game category or tag, eg: mmorpg, shooter, pvp, mmofps and more. Full tag list at https://www.mmobomb.com/api',
+        //   route: '/CategoryTag',
+        // },
+        // {
+        //   id: 8,
+        //   image: 'src/pictures/games8.png',
+        //   title: 'Games by Platform',
+        //   description: 'Insert platform, eg: pc, browser or all',
+        //   route: '/GamesByPlat',
 
-        },
-        {
-          id: 4,
-          image: 'src/pictures/games4.png',
-          title: 'Filter Games by multiple tags',
-          description: 'Filter Games by multiple tags for personalized results. Insert tag, eg: mmorpg, shooter, pvp, mmofps and more at https://www.mmobomb.com/api . Optionally you can also use the "platform"...',
-          route: '/FilterMultiTags',
-        },
-        {
-          id: 5,
-          image: 'src/pictures/games5.png',
-          title: 'Games by platform & category & sorted',
-          description: 'Games by platform & category & sorted',
-          route: '/PlatCatSort',
-        },
-        {
-          id: 6,
-          image: 'src/pictures/games6.png',
-          title: 'Sort Games',
-          description: 'Sort games by release date, alphabetical, popularity or relevance',
-          route: '/SortGames',
-        },
-        {
-          id: 7,
-          image: 'src/pictures/games7.png',
-          title: 'Games by category or tag',
-          description: 'Insert game category or tag, eg: mmorpg, shooter, pvp, mmofps and more. Full tag list at https://www.mmobomb.com/api',
-          route: '/CategoryTag',
-        },
-        {
-          id: 8,
-          image: 'src/pictures/games8.png',
-          title: 'Games by Platform',
-          description: 'Insert platform, eg: pc, browser or all',
-          route: '/GamesByPlat',
-
-        },
+        // },
         {
           id: 9,
-          image: 'src/pictures/games9.png',
-          title: 'Return details from a specific game',
-          description: 'Insert game id',
-          route: '/SpecificDetail',
-
+          image: "src/pictures/games4.png",
+          title: "Return details from a specific game.. or a random one!",
+          description: "Insert game id",
+          route: "/SpecificDetail",
         },
-      
       ],
     };
   },
@@ -129,7 +126,7 @@ export default defineComponent({
   text-align: center;
   margin: auto;
   max-width: 800px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .header h1 {
@@ -168,7 +165,7 @@ export default defineComponent({
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.687);
   color: #f0f0f0;
   padding: 15px;
 }
