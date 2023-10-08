@@ -16,6 +16,38 @@
       </div>
     </div>
 
+    <div class="filter-section">
+      <label for="platform-filter">Platform:</label>
+      <select
+        id="platform-filter"
+        v-model="selectedPlatform"
+        @change="filterGames"
+      >
+        <option value="">All</option>
+        <option value="PC (Windows)">PC (Windows)</option>
+        <option value="Web Browser">Web Browser</option>
+      </select>
+
+      <label for="category-filter">Category/Genre:</label>
+      <select
+        id="category-filter"
+        v-model="selectedCategory"
+        @change="filterGames"
+      >
+        <option value="">All</option>
+        <option
+          v-for="category in categories"
+          :key="category"
+          :value="category"
+        >
+          {{ category }}
+        </option>
+      </select>
+
+      <!-- Add a Reset Filter button -->
+      <button @click="resetFilters">Reset Filter</button>
+    </div>
+
     <div
       v-if="showFavorites"
       class="fixed-button favorites-sidebar"
@@ -87,11 +119,9 @@
 <script>
 import {
   fetchGames,
-  // fetchGamesByPlatform,
-  // fetchFilteredGames,
-  // fetchGamesBySort,
-  // fetchGamesByCategoryAndSort,
-  // fetchGamesByCategory,
+  fetchGamesByPlatform,
+  fetchGamesBySort,
+  fetchGamesByCategory,
 } from "../apiService.js";
 
 export default {
@@ -104,7 +134,6 @@ export default {
       bookmarkCount: 0,
       selectedCategory: "",
       selectedPlatform: "",
-      selectedSortBy: "",
       categories: [
         "MMORPG",
         "Shooter",
@@ -123,13 +152,12 @@ export default {
         "MMO",
         "Fantasy",
       ],
-      platforms: ["PC (Windows)", "Web Browser"], 
+      platforms: ["PC (Windows)", "Web Browser"],
     };
   },
   async mounted() {
     try {
-      const response = await fetchGames();
-      this.games = JSON.parse(response);
+      this.fetchOriginalGames(); // Load the original games
 
       const storedBookmarks = JSON.parse(
         localStorage.getItem("bookmarkedGames")
@@ -190,6 +218,37 @@ export default {
         return description.slice(0, maxLength) + " ...";
       } else {
         return description;
+      }
+    },
+    filterGames() {
+      let filteredGames = this.games;
+
+      if (this.selectedPlatform) {
+        filteredGames = filteredGames.filter(
+          (game) => game.platform === this.selectedPlatform
+        );
+      }
+
+      if (this.selectedCategory) {
+        filteredGames = filteredGames.filter(
+          (game) => game.genre === this.selectedCategory
+        );
+      }
+
+      this.games = filteredGames;
+    },
+    resetFilters() {
+      this.selectedPlatform = "";
+      this.selectedCategory = "";
+
+      this.fetchOriginalGames();
+    },
+    async fetchOriginalGames() {
+      try {
+        const response = await fetchGames();
+        this.games = JSON.parse(response);
+      } catch (error) {
+        console.error("Error fetching games:", error);
       }
     },
   },
@@ -388,7 +447,6 @@ div.back-button:hover a {
   color: red;
   font-size: 20px;
   position: fixed;
-  right: 10px;
 }
 
 .bookmark-notification {
@@ -404,5 +462,20 @@ div.back-button:hover a {
   justify-content: center;
   align-items: center;
   font-size: 12px;
+}
+
+.filter-section {
+  text-align: center;
+  margin: 20px;
+}
+
+.filter-section label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.filter-section select {
+  padding: 5px;
+  font-size: 16px;
 }
 </style>
