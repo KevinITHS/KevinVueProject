@@ -44,7 +44,6 @@
         </option>
       </select>
 
-      <!-- Add a Reset Filter button -->
       <button @click="resetFilters">Reset Filter</button>
     </div>
 
@@ -157,7 +156,7 @@ export default {
   },
   async mounted() {
     try {
-      this.fetchOriginalGames(); // Load the original games
+      this.fetchOriginalGames();
 
       const storedBookmarks = JSON.parse(
         localStorage.getItem("bookmarkedGames")
