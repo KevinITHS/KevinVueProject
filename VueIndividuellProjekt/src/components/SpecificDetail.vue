@@ -87,84 +87,69 @@ export default {
 };
 </script>
 
-<style scoped>
-.specific-detail {
-  text-align: center;
-  padding: 20px;
-}
+<style scoped lang="sass">
+.specific-detail
+  text-align: center
+  padding: 20px
 
-div.back-button {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
+  div.back-button
+    position: absolute
+    top: 20px
+    left: 20px
 
-div.back-button a {
-  color: #f8c8dc !important;
-}
+    a
+      color: #f8c8dc !important
 
-div.back-button:hover a {
-  color: black !important;
-}
+    &:hover a
+      color: black !important
 
-.fixed-button {
-  position: fixed !important;
-  z-index: 999;
-}
+  .fixed-button
+    position: fixed !important
+    z-index: 999
 
-h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
+  h1
+    font-size: 24px
+    margin-bottom: 10px
 
-input[type="number"] {
-  padding: 5px;
-  font-size: 16px;
-}
+  input[type="number"]
+    padding: 5px
+    font-size: 16px
 
-button {
-  padding: 5px 10px;
-  background-color: #6a5acd;
-  color: white;
-  border: none;
-  cursor: pointer;
-  margin-top: 10px;
-}
+  button
+    padding: 5px 10px
+    background-color: #6a5acd
+    color: white
+    border: none
+    cursor: pointer
+    margin-top: 10px
 
-button:hover {
-  background-color: #5639ab;
-}
+    &:hover
+      background-color: #5639ab
 
-.game-details-container {
-  text-align: left;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
+  .game-details-container
+    text-align: left
+    max-width: 800px
+    margin: 0 auto
+    padding: 20px
+    border: 1px solid #ccc
+    border-radius: 5px
 
-.not-found {
-  color: red;
-  font-size: 18px;
-}
+  .not-found
+    color: red
+    font-size: 18px
 
-.screenshots {
-  text-align: center;
-}
+  .screenshots
+    text-align: center
 
-.screenshots img {
-  max-width: 100%;
-  height: auto;
-  margin: 10px auto;
-  border: 1px;
-  border-radius: 5px;
-}
+  .screenshots img
+    max-width: 100%
+    height: auto
+    margin: 10px auto
+    border: 1px
+    border-radius: 5px
 
-@media screen and (max-width: 475px) {
-  .game-details-container img {
-    max-width: 100%;
-    height: auto;
-  }
-}
+  @media screen and (max-width: 475px)
+    .game-details-container img
+      max-width: 100%
+      height: auto
 </style>
